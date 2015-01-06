@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Zero&amp;One Technologies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Required -->
+    <link href="css/global-style.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script type="text/javascript">
+    function initialize() {
+      var myLatlng = new google.maps.LatLng(6.524379, 3.379206);
+      var mapOptions = {
+        zoom: 12,
+        scrollwheel: false,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      var map = new google.maps.Map(document.getElementById('mapCanvas'), mapOptions);
+    
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'Hello World!'
+      });
+      
+      var contentString = '<div class="info-window-content"><h2>Web Pixels</h2>'+
+                          '<h3>Designing forward</h3>'+
+                          '<p>Some more details for directions or company informations...</p></div>';
+                          
+      var infowindow = new google.maps.InfoWindow({
+          content: contentString
+      });
+      
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map,marker);
+      });
+    }
+    
+    google.maps.event.addDomListener(window, 'load', initialize);
+    
+    </script>
+
+</head>
+<body>
+
+<section id="asideMenu" class="aside-menu">
+	<form class="form-inline form-search">
+        <div class="input-group">
+            <input type="search" class="form-control" placeholder="Search..." />
+            <span class="input-group-btn">
+                <button id="btnHideAsideMenu" class="btn btn-close" type="button" title="Hide sidebar"><i class="fa fa-times"></i></button>
+            </span>
+        </div>
+    </form>
+	
+    
+    <h5 class="side-section-title">Social media</h5>
+    <div class="social-media">
+        <a href="#"><i class="fa fa-facebook facebook"></i></a>
+        <a href="#"><i class="fa fa-google-plus google"></i></a>
+        <a href="#"><i class="fa fa-twitter twitter"></i></a>
+    </div>
+    
+    <h5 class="side-section-title">Contact information</h5>
+    <div class="contact-info">
+        <h5>Address</h5>
+        <p>3/5 Alhaji Lateef Kayode Jakande House
+        <br/>Adeyemo Alakija, Victoria Island
+        <br/>Lagos
+        </p>
+        
+        <h5>Email</h5>
+        <p>info@zeroandone.com.ng</p>
+        
+        <h5>Phone</h5>
+        <p> +234 808-339-4828</p>
+    </div>
+</section>
+<div class="wrapper">
+	
+
+<header>
+    <div class="navbar navbar-white" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle navbar-toggle-aside-menu">
+                    <i class="fa fa-outdent icon-custom"></i>
+                </button>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/zero-and-one-logo.png" alt="Zero &amp; One Logo">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About us</a></li>
+                   <!--  <li><a href="team.html">Team</a></li>     -->               
+                    <li>
+                        <a href="work-project.html">Portfolio</a>               
+                    </li>
+                  
+                    <li class="active"><a href="contact.html" data-close-others="true">Contact Us</a></li>
+                        
+                      
+                    <li class="dropdown hide" style="z-index:500;">
+                        <a href="#" class="dropdown-toggle dropdown-form-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-user">
+                            <li id="dropdownForm">
+                                <div class="dropdown-form">
+                                    <form role="form" class="p-15">
+                                        <div class="form-group">
+                                            <input type="search" class="form-control" id="email" placeholder="Enter email">
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</header>
+    <section class="slice no-padding">
+        <div id="mapCanvas" class="map-canvas no-margin"></div>
+    </section>
+    
+    <section class="slice bg-3">
+        <div class="w-section inverse">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="section-title">Contact us</h3>
+                        <p>
+                        Headquartered in Nigeria’s Federal Capital, Abuja, the company operates two liaison offices in the Commercial Capital of Lagos and the Oil Capital in Port-Harcourt. These offices coordinate the activities of dozens of marketing executives taking our innovative solutions across the breadth of the country.
+                        You can contact us at any of the locations below:
+
+                        </p>
+                        
+                        <form class="form-light mt-20" role="form">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" placeholder="Your name">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" placeholder="Email address">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Phone</label>
+                                        <input type="text" class="form-control" placeholder="Phone number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea class="form-control" id="message" placeholder="Write you message here..." style="height:100px;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-two">Send message</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="section-title">Business info</h3>
+                                <div class="contact-info">
+                                    <h5>Address</h5>
+                                    
+                                    <p>3/5 Alhaji Lateef Kayode Jakande House,
+                                    <br>Adeyemo Alakija, Victoria Island
+                                    <br>Lagos
+                                    <br>  
+                                    </p>
+                                    <br/>
+                                    <p>No 2 Elder Marcus Wike Street,
+                                    <br>Off Iwofe/COE Road, Port-Harcourt
+                                    <br>Rivers State
+                                    <br>  
+                                    </p>
+                                    
+                                    <h5>Email</h5>
+
+                                    <p>info@zeroandone.com.ng</p>
+                                    
+                                    <h5>Phone</h5>
+                                    
+                                    <p>Lagos : +234 808-339-4828</p>
+                                    <p>Port-Harcourt : +234 802-744-3516</p>
+                                    <p>United-Kingdom : +447 577-696-916</p>
+                                    <p>Kenya : +254 720-330-266</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="section-title">Program</h3>
+                                <div class="contact-info">
+                                    <h5>Monday - Friday</h5>
+                                    <p>09:00 AM - 5:30 PM</p>
+                                    
+                                    <h5>Saturday</h5>
+                                    <p>Support Calls Only</p>
+                                    
+                                    <h5>Sunday</h5>
+                                    <p>Support Calls Only</p>
+                                </div>
+                                <h3 class="section-title">Stay connected</h3>
+                        <p>
+                        We can also be reached via social media:
+                        </p>
+                        <div class="social-media">
+                            <a href="#"><i class="fa fa-facebook facebook"></i></a>
+                            <a href="#"><i class="fa fa-google-plus google"></i></a>
+                            <a href="#"><i class="fa fa-twitter twitter"></i></a>
+                        </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    
+  <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="col">
+                   <h4>Contact us</h4>
+                   <ul>
+                  
+                        <li> 3/5 Alhaji Lateef Kayode Jakande House</li>
+                        <li>Phone: +234 808-339-4828 </li>
+                        <li>Email: <a href="mailto:info@zeroandone.com.ng" title="Email Us">info@zeroandone.com.ng</a></li>
+                        <li>Skype: <a href="skype:my.business?call" title="Skype us">my-business</a></li>
+                        <li>Zero&amp;One - Automating Business Processes</li>
+                    </ul>
+                 </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="col">
+                    <h4>Needs Assessment</h4>
+                    <p>If you will like us to assess your business needs we can get in touch.</p>
+                    <form class="form-inline">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Your email address..." />
+                            <span class="input-group-btn">
+                                <button class="btn btn-two" type="button">Go!</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="col col-social-icons">
+                    <h4>Follow us</h4>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-skype"></i></a>
+                </div>
+            </div>
+
+             <div class="col-md-3">
+                <div class="col">
+                    <h4>About us</h4>
+                    <p>
+                    Zero&amp;One Technologies is a fast growing and widely diversified ICT services and software development company. 
+                    <br /><br />
+                   
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <hr />
+        
+        <div class="row">
+            <div class="col-lg-9 copyright">
+                2014 &copy; Zero&amp;One Technologies. All rights reserverd. 
+                
+            </div>
+            <div class="col-lg-3 footer-logo">
+                
+            </div>
+        </div>
+    </div>
+</footer></div>
+
+<!-- JavaScript -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/jquery.easing.js"></script>
+
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="assets/hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="assets/masonry/masonry.js"></script>
+<script type="text/javascript" src="assets/page-scroller/jquery.ui.totop.min.js"></script>
+<script type="text/javascript" src="assets/mixitup/jquery.mixitup.js"></script>
+<script type="text/javascript" src="assets/mixitup/jquery.mixitup.init.js"></script>
+<script type="text/javascript" src="assets/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript" src="assets/easy-pie-chart/jquery.easypiechart.js"></script>
+<script type="text/javascript" src="assets/waypoints/waypoints.min.js"></script>
+<script type="text/javascript" src="js/jquery.wp.custom.js"></script>
+</body>
+</html>
